@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/partials/header/header.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,5 +10,12 @@ import { HeaderComponent } from '../../components/partials/header/header.compone
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+  constructor(private route: Router) {
+  }
 
+
+  goToExplore() {
+    this.route.navigate(['/explore']);
+    
+  }
 }
