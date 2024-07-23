@@ -31,7 +31,7 @@ export class ExploreComponent implements OnInit {
     let fetchBlogsString = `blogs`
 
     if (seachValue) {
-      fetchBlogsString += `?title="${seachValue}"`
+      fetchBlogsString += `?title=${seachValue}`
     }
 
     const response = await this.dataService.getAll(`${fetchBlogsString}`);

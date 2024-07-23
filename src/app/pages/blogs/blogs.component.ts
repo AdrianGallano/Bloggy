@@ -31,7 +31,7 @@ export class BlogsComponent implements OnInit {
       let fetchBlogsString = `blogs?user_id=${user_id}`
 
       if (searchString) {
-        fetchBlogsString += `&title="${searchString}"`
+        fetchBlogsString += `&title=${searchString}`
       }
 
       const response = await this.dataService.getAll(`${fetchBlogsString}`);
