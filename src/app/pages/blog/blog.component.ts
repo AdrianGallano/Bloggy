@@ -3,6 +3,9 @@ import { BlogCardComponent } from '../../components/partials/blog-card/blog-card
 import { HeaderComponent } from '../../components/partials/header/header.component';
 import { BlogTemplateComponent } from '../../components/blog-template/blog-template.component';
 import { RouterOutlet } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { ActivatedRoute } from '@angular/router';
+import blog from '../../models/blog.models';
 
 @Component({
   selector: 'app-blog',
@@ -11,5 +14,17 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './blog.component.html',
 })
 export class BlogComponent {
+  blog: blog | undefined;
+  id: string | null;
 
+  constructor(private dataService: DataService, private aRoute: ActivatedRoute) {
+    this.id = this.aRoute.snapshot.paramMap.get('id');
+    console.log("id", this.id)
+    this.fetchBlogs()
+  }
+
+  async fetchBlogs() {
+    const response = await  this.dataService.getAll(`blogs/${this.id}`);
+    console.log(response)
+  }
 }

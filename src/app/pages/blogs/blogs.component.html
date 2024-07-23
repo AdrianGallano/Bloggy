@@ -9,9 +9,7 @@
                 read your interest, give a feedback, be entertained, and connect with the community early and often.</p>
         </div>
         <div class="grid gap-8 lg:grid-cols-2">
-            <app-blog-card [id]="'1'"></app-blog-card>
-            <app-blog-card [id]="'1'"></app-blog-card>
-            <app-blog-card [id]="'1'"></app-blog-card>
+            <app-blog-card *ngFor="let blog of blogs" [id]="blog.blog_id.toString()">{{blog}}</app-blog-card>
         </div>
     </div>
 </section>

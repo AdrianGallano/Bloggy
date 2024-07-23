@@ -9,6 +9,9 @@ import { RouterModule } from '@angular/router';
 })
 export class BlogCardComponent {
   @Input() id!: string;
+  userBlogComment = {
+    
+  }
   ngOnInit() { 
     console.log(this.id);
   }

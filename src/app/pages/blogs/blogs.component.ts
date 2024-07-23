@@ -1,15 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BlogCardComponent } from '../../components/partials/blog-card/blog-card.component';
 import { HeaderComponent } from '../../components/partials/header/header.component';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import blog from '../../models/blog.models';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [BlogCardComponent, HeaderComponent, RouterOutlet],
+  imports: [BlogCardComponent, HeaderComponent, RouterOutlet, CommonModule],
   templateUrl: './blogs.component.html',
 })
 
-export class BlogsComponent {
-  
+
+export class BlogsComponent implements OnInit {
+
+  blogs: Array<blog> = []
+
+  constructor(private dataService: DataService) {
+
+  }
+
+  ngOnInit() {
+    this.asyncfetchBlogs()
+  }
+
+
+  async asyncfetchBlogs() {
+    const response = await this.dataService.getAll('blogs')
+    this.blogs = response.data.blog
+  }
 }
