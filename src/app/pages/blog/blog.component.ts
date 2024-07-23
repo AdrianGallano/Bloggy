@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import blog from '../../models/blog.models';
-import { RegisterComponent } from '../register/register.component';
+
 
 @Component({
   selector: 'app-blog',

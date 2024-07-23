@@ -1,7 +1,8 @@
-import { Component, Input  } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import blog from '../../../models/blog.models';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-blog-card',
@@ -12,6 +13,14 @@ import { CommonModule } from '@angular/common';
 export class BlogCardComponent {
   @Input() data!: blog;
   user_id = localStorage.getItem('user_id');
-  ngOnInit() { 
+
+  constructor(private dataService: DataService) { }
+  
+  ngOnInit() {
+  }
+
+  async deleteBlog(blog_id: number | undefined) {
+    const response = this.dataService.delete("blogs", blog_id)
+    window.location.href = `/blogs`
   }
 }

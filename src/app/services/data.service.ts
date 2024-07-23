@@ -87,7 +87,7 @@ export class DataService {
     }
   }
 
-  async delete(route: string, id: number) {
+  async delete(route: string, id: number | string | undefined) {
     this.addAuthorizationToHeader()
     const response = await fetch(`http://localhost/bloggy-api/public/api/${route}/${id}`,
       {

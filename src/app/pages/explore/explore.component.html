@@ -1,15 +1,19 @@
-<router-outlet></router-outlet>
-<app-header></app-header>
+<app-header [page]="'explore'"></app-header>
 <section class="bg-white dark:bg-gray-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl min-h-screen lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-            <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Explore Blogs
+            <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Explore
+                Blogs
             </h2>
-            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Be part of the conversation,
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400 mb-4">Be part of the conversation,
                 read your interest, give a feedback, be entertained, and connect with the community early and often.</p>
+
+
+            <app-search (searchEvent)="searchBlog($event)"></app-search>
         </div>
         <div class="grid gap-8 lg:grid-cols-2">
-            <app-blog-card *ngFor="let blog of blogs" [data]="blog"  >{{blog}}</app-blog-card>
+            <app-blog-card *ngFor="let blog of blogs" [data]="blog">{{blog}}</app-blog-card>
         </div>
     </div>
 </section>
+<router-outlet></router-outlet> <!-- This will render the child routes like BlogComponent or BlogFormComponent -->
