@@ -30,6 +30,10 @@ export const routes: Routes = [
         component: BlogFormComponent
     },
     {
+        path: 'blogs/edit/:id',
+        component: BlogFormComponent
+    },
+    {
         path: 'blogs/:id',
         component: BlogComponent
     },

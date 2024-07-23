@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class BlogCardComponent {
   @Input() data!: blog;
-
+  user_id = localStorage.getItem('user_id');
   ngOnInit() { 
   }
 }
