@@ -6,6 +6,8 @@ type blog = {
     user_id: 6,
     created_at: string,
     updated_at: string
+    username: string
+    image_name: string
 }
 
 export default blog

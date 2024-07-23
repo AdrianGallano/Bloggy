@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
-<app-header></app-header>
-<section class="bg-white dark:bg-gray-900">
+<app-header [page]="'blogs'"></app-header>
+<section class="bg-white dark:bg-gray-900"  *ngIf="isAuthorized">
     <div class="py-8 px-4 mx-auto max-w-screen-xl min-h-screen lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
             <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Your Blogs
@@ -9,7 +9,8 @@
                 read your interest, give a feedback, be entertained, and connect with the community early and often.</p>
         </div>
         <div class="grid gap-8 lg:grid-cols-2">
-            <app-blog-card *ngFor="let blog of blogs" [id]="blog.blog_id.toString()">{{blog}}</app-blog-card>
+            <app-blog-card *ngFor="let blog of blogs" [data]="blog"  >{{blog}}</app-blog-card>
         </div>
     </div>
 </section>
+<app-register-prompt *ngIf="!isAuthorized"></app-register-prompt>

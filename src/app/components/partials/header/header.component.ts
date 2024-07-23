@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-
+  @Input() page!: string;
 }

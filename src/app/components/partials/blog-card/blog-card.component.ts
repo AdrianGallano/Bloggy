@@ -1,18 +1,17 @@
 import { Component, Input  } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import blog from '../../../models/blog.models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-blog-card',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './blog-card.component.html',
 })
 export class BlogCardComponent {
-  @Input() id!: string;
-  userBlogComment = {
-    
-  }
+  @Input() data!: blog;
+
   ngOnInit() { 
-    console.log(this.id);
   }
 }

@@ -24,12 +24,12 @@ export class LoginComponent {
 
   async login() {
     let response = await this.tokenService.login(this.userData.email, this.userData.password)
-    
-    console.log(response)
     if (response.success === false) {
       this.error = response.errors
     } else {
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user_id', response.data.user_id);
+
     }
 
     this.route.navigate(['/blogs'])

@@ -6,6 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import blog from '../../models/blog.models';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-blog',
@@ -19,12 +20,11 @@ export class BlogComponent {
 
   constructor(private dataService: DataService, private aRoute: ActivatedRoute) {
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log("id", this.id)
-    this.fetchBlogs()
+    this.fetchBlog()
   }
 
-  async fetchBlogs() {
+  async fetchBlog() {
     const response = await  this.dataService.getAll(`blogs/${this.id}`);
-    console.log(response)
+    this.blog = response.data.blog;
   }
 }
