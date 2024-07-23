@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="flex flex-col items-center py-8 px-4 mx-auto max-w-screen min-h-screen lg:py-16 lg:px-6 dark:bg-gray-900">
+    <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Your Profile
+    </h2>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400 mb-4 w-3/6">Be part of the conversation,
+        read your interest, give a feedback, be entertained, and connect with the community early and often.</p>
+
+    <div class="flex gap-8 mb-6 lg:mb-16 justify-center items-center">
+        <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+            <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg h-60 w-auto" src="{{user?.image_name}}"
+                alt="Bonnie Avatar">
+            <div class="p-5">
+                <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <a href="#">{{user?.username}}</a>
+                </h3>
+                <span class="text-gray-500 dark:text-gray-400">{{user?.email}}</span>
+                <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Hi my name is {{user?.first_name}}
+                    {{user?.last_name}}! Very pleased to meet you!</p>
+            </div>
+        </div>
+    </div>
+</div>

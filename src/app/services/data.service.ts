@@ -26,7 +26,7 @@ export class DataService {
     this.header.Authorization = `Bearer ${this.token}`
   }
 
-  async get(route: string, id: number | string) {
+  async get(route: string, id: number | string | null) {
     try {
       this.addAuthorizationToHeader()
       const response = await fetch(`http://localhost/bloggy-api/public/api/${route}/${id}`,
