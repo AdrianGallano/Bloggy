@@ -29,9 +29,7 @@ export class LoginComponent {
     } else {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user_id', response.data.user_id);
-
+      window.location.href = '/blogs'
     }
-
-    this.route.navigate(['/blogs'])
   }
 }
