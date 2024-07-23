@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../partials/header/header.component';
 
 @Component({
   selector: 'app-blog-form',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './blog-form.component.html',
-  styleUrl: './blog-form.component.css'
 })
 export class BlogFormComponent {
 

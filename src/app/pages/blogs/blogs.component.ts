@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import blog from '../../models/blog.models';
 import { DataService } from '../../services/data.service';
 import { RegisterPromptComponent } from '../../components/register-prompt/register-prompt.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs',
@@ -13,25 +14,25 @@ import { RegisterPromptComponent } from '../../components/register-prompt/regist
   imports: [BlogCardComponent, HeaderComponent, RouterOutlet, CommonModule, RegisterPromptComponent],
   templateUrl: './blogs.component.html',
 })
-
-
 export class BlogsComponent implements OnInit {
-
-  blogs: Array<blog> = []
+  blogs: Array<blog> = [];
   isAuthorized = localStorage.getItem('token') ? true : false;
-  
-  constructor(private dataService: DataService) {
 
-  }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.asyncfetchBlogs()
+    this.fetchBlogs();
   }
 
+  async fetchBlogs() {
+    let user_id = localStorage.getItem('user_id');
+    if (user_id) {
+      const response = await this.dataService.getAll(`blogs?user_id=${user_id}`);
+      this.blogs = response.data.blog;
+    }
+  }
 
-  async asyncfetchBlogs() {
-    let user_id = localStorage.getItem('user_id')
-    const response = await this.dataService.getAll(`blogs?user_id=${user_id}`)
-    this.blogs = response.data.blog
+  goToCreateBlog() {
+    this.router.navigate(['/blogs/create']);
   }
 }
