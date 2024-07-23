@@ -18,9 +18,11 @@
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/router": "^17.2.0",
+    "@tinymce/tinymce-angular": "^8.0.1",
     "flowbite": "^2.4.1",
     "flowbite-typography": "^1.0.3",
     "rxjs": "~7.8.0",
+    "tinymce": "^7.2.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
