@@ -9,7 +9,6 @@ export class DataService {
   private token: string | undefined | null;
   header: header = {
     Accept: 'application/json',
-    'Content-Type': 'application/json',
   };
 
   constructor() {
@@ -77,6 +76,24 @@ export class DataService {
           headers: this.header,
           method: "POST",
           body: JSON.stringify(payload)
+        })
+      const data = await response.json()
+      return data
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        return err.message
+      }
+    }
+  }
+
+  async upload(route: string, payload: FormData) {
+    try {
+      this.addAuthorizationToHeader()
+      const response = await fetch(`http://localhost/bloggy-api/public/api/${route}`,
+        {
+          headers: this.header,
+          method: "POST",
+          body: payload
         })
       const data = await response.json()
       return data
