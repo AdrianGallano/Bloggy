@@ -14,13 +14,23 @@ export class BlogCardComponent {
   @Input() data!: blog;
   user_id = localStorage.getItem('user_id');
 
-  constructor(private dataService: DataService) { }
-  
+  constructor(private dataService: DataService) {
+  }
+
   ngOnInit() {
   }
 
   async deleteBlog(blog_id: number | undefined) {
-    const response = this.dataService.delete("blogs", blog_id)
-    window.location.href = `/blogs`
+    if (blog_id) {
+      try {
+        await this.dataService.delete('blogs', blog_id);
+        window.location.href = '/blogs'
+      } catch (error) {
+        console.error('Error deleting blog:', error);
+      }
+    } else {
+      console.error('Blog ID is undefined');
+    }
   }
 }
+

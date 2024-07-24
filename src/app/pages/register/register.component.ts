@@ -3,6 +3,7 @@ import user from '../../models/user.models';
 import { DataService } from '../../services/data.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import registerErrors from '../../models/registerErrors.models';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent {
     status: 0
   };
 
-  errors = [];
+  errors: registerErrors | undefined;
   constructor(private dataService: DataService) {
 
   }
@@ -31,8 +32,8 @@ export class RegisterComponent {
     try {
       let response = await this.dataService.create('users', this.userData)
       if (response.success == false) {
-        this.errors = response.message
-
+        this.errors = response.errors
+        console.log(this.errors)
 
       } else {
         window.location.href = '/login'
