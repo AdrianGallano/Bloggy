@@ -32,7 +32,6 @@ export class BlogTemplateComponent implements OnInit, OnChanges {
     
     if (this.data != undefined && this.data["content"] != undefined) {
       this.webContent = this.sanitizer.bypassSecurityTrustHtml(this.data['content'])
-      console.log("webContent", this.webContent)
     }
   }
 

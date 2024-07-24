@@ -4,139 +4,109 @@ import { FormsModule } from '@angular/forms';
 import tinymce from 'tinymce';
 
 @Component({
-    selector: 'app-blog-editor',
-    standalone: true,
-    imports: [EditorComponent, FormsModule],
-    templateUrl: './blog-editor.component.html',
-    providers: [
-        { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
-    ]
+  selector: 'app-blog-editor',
+  standalone: true,
+  imports: [EditorComponent, FormsModule],
+  templateUrl: './blog-editor.component.html',
+  providers: [
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+  ]
 })
 
 
 export class BlogEditorComponent {
-    content = `<p class="lead">Flowbite is an open-source library of UI components built with the utility-first classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals, datepickers.</p>
-<p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way, you can think things through before committing to an actual design project.</p>
-<p>But then I found a <a href="https://flowbite.com">component library based on Tailwind CSS called Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation bars, cards, form elements, and more which are conveniently built with the utility classes from Tailwind CSS.</p>
-<h2>Getting started with Flowbite</h2>
-<p>First of all you need to understand how Flowbite works. This library is not another framework. Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the documentation.</p>
-<p>It also includes a JavaScript file that enables interactive components, such as modals, dropdowns, and datepickers which you can optionally include into your project via CDN or NPM.</p>
-<p>You can check out the <a href="https://flowbite.com/docs/getting-started/quickstart/">quickstart guide</a> to explore the elements by including the CDN files into your project. But if you want to build a project with Flowbite I recommend you to follow the build tools steps so that you can purge and minify the generated CSS.</p>
-<p>You'll also receive a lot of useful application UI, marketing UI, and e-commerce pages that can help you get started with your projects even faster. You can check out this <a href="https://flowbite.com/docs/components/tables/">comparison table</a> to better understand the differences between the open-source and pro version of Flowbite.</p>
-<h2>When does design come in handy?</h2>
-<p>While it might seem like extra work at a first glance, here are some key moments in which prototyping will come in handy:</p>
-<ol>
-<li><strong>Usability testing</strong>. Does your user know how to exit out of screens? Can they follow your intended user journey and buy something from the site you&rsquo;ve designed? By running a usability test, you&rsquo;ll be able to see how users will interact with your design once it&rsquo;s live;</li>
-<li><strong>Involving stakeholders</strong>. Need to check if your GDPR consent boxes are displaying properly? Pass your prototype to your data protection team and they can test it for real;</li>
-<li><strong>Impressing a client</strong>. Prototypes can help explain or even sell your idea by providing your client with a hands-on experience;</li>
-<li><strong>Communicating your vision</strong>. By using an interactive medium to preview and test design elements, designers and developers can understand each other &mdash; and the project &mdash; better.</li>
-</ol>
-<h3>Laying the groundwork for best design</h3>
-<p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way, you can think things through before committing to an actual design project.</p>
-<p>Let's start by including the CSS file inside the <code>head</code> tag of your HTML.</p>
-<h3>Understanding typography</h3>
-<h4>Type properties</h4>
-<p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across letters. A typeface represents shared patterns across a collection of letters.</p>
-<h4>Baseline</h4>
-<p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across letters. A typeface represents shared patterns across a collection of letters.</p>
-<h4>Measurement from the baseline</h4>
-<p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across letters. A typeface represents shared patterns across a collection of letters.</p>
-<h3>Type classification</h3>
-<h4>Serif</h4>
-<p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter. Typefaces with serifs are called serif typefaces. Serif fonts are classified as one of the following:</p>
-<h4>Old-Style serifs</h4>
-<ul>
-<li>Low contrast between thick and thin strokes</li>
-<li>Diagonal stress in the strokes</li>
-<li>Slanted serifs on lower-case ascenders</li>
-<ol>
-<li>Low contrast between thick and thin strokes</li>
-<li>Diagonal stress in the strokes</li>
-<li>Slanted serifs on lower-case ascenders</li>
-</ol>
-</ul>
-<h3>Laying the best for successful prototyping</h3>
-<p>A serif is a small shape or projection that appears at the beginning:</p>
-<blockquote>
-<p>Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application.</p>
-</blockquote>
-<h4>Code example</h4>
-<p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter. Typefaces with serifs are called serif typefaces. Serif fonts are classified as one of the following:</p>
-<pre><code class="language-html">&lt;dl class="grid grid-cols-2 gap-8 max-w-screen-md text-gray-900 sm:grid-cols-3 dark:text-white"&gt;
-  &lt;div class="flex flex-col justify-center items-center"&gt;
-    &lt;dt class="mb-2 text-3xl font-extrabold"&gt;73M+&lt;/dt&gt;
-    &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;developers&lt;/dd&gt;
-  &lt;/div&gt;
-  &lt;div class="flex flex-col justify-center items-center"&gt;
-    &lt;dt class="mb-2 text-3xl font-extrabold"&gt;1B+&lt;/dt&gt;
-    &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;contributors&lt;/dd&gt;
-  &lt;/div&gt;
-  &lt;div class="flex flex-col justify-center items-center"&gt;
-    &lt;dt class="mb-2 text-3xl font-extrabold"&gt;4M+&lt;/dt&gt;
-    &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;organizations&lt;/dd&gt;
-  &lt;/div&gt;
-  &lt;/dl&gt;
-  </code></pre>
-<h4>Table example</h4>
-<p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.</p>
-<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 37.3876%;"><col style="width: 36.919%;"><col style="width: 25.6747%;"></colgroup>
-<tbody>
-<tr>
-<th style="width: 37.4336%;">Country</th>
-<th style="width: 36.9261%;">Date &amp; Time</th>
-<th style="width: 21.0385%;">Amount</th>
-</tr>
-<tr>
-<td style="width: 37.4336%;">United States</td>
-<td style="width: 36.9261%;">April 21, 2021</td>
-<td style="width: 21.0385%;"><strong>$2,300</strong></td>
-</tr>
-<tr>
-<td style="width: 37.4336%;">Canada</td>
-<td style="width: 36.9261%;">May 31, 2021</td>
-<td style="width: 21.0385%;"><strong>$300</strong></td>
-</tr>
-<tr>
-<td style="width: 37.4336%;">United Kingdom</td>
-<td style="width: 36.9261%;">June 3, 2021</td>
-<td style="width: 21.0385%;"><strong>$2,500</strong></td>
-</tr>
-<tr>
-<td style="width: 37.4336%;">Australia</td>
-<td style="width: 36.9261%;">June 23, 2021</td>
-<td style="width: 21.0385%;"><strong>$3,543</strong></td>
-</tr>
-<tr>
-<td style="width: 37.4336%;">Germany</td>
-<td style="width: 36.9261%;">July 6, 2021</td>
-<td style="width: 21.0385%;"><strong>$99</strong></td>
-</tr>
-<tr>
-<td style="width: 37.4336%;">France</td>
-<td style="width: 36.9261%;">August 23, 2021</td>
-<td style="width: 21.0385%;"><strong>$2,540</strong></td>
-</tr>
-</tbody>
-</table>
-<h3>Best practices for setting up your prototype</h3>
-<p><strong>Low fidelity or high fidelity?</strong> Fidelity refers to how close a prototype will be to the real deal. If you&rsquo;re simply preparing a quick visual aid for a presentation, a low-fidelity prototype &mdash; like a wireframe with placeholder images and some basic text &mdash; would be more than enough. But if you&rsquo;re going for more intricate usability testing, a high-fidelity prototype &mdash; with on-brand colors, fonts and imagery &mdash; could help get more pointed results.</p>
-<p><strong>Consider your user</strong>. To create an intuitive user flow, try to think as your user would when interacting with your product. While you can fine-tune this during beta testing, considering your user&rsquo;s needs and habits early on will save you time by setting you on the right path.</p>
-<p><strong>Start from the inside out</strong>. A nice way to both organize your tasks and create more user-friendly prototypes is by building your prototypes &lsquo;inside out&rsquo;. Start by focusing on what will be important to your user, like a Buy now button or an image gallery, and list each element by order of priority. This way, you&rsquo;ll be able to create a prototype that puts your users&rsquo; needs at the heart of your design.</p>
-<p>And there you have it! Everything you need to design and share prototypes &mdash; right in Flowbite Figma.</p>`
+  content = `<h1>Welcome to TinyMCE</h1>
+                        <p>TinyMCE is a powerful and flexible text editor that allows you to create and edit content with ease. Here's a quick guide on how to use it:</p>
+                        
+                        <h2>Basic Features</h2>
+                        <p>Start typing in the editor to create your content. You can format text, create lists, insert links, images, and more using the toolbar options.</p>
+                        
+                        <h3>Formatting Text</h3>
+                        <p>Use the toolbar buttons to apply <strong>bold</strong>, <em>italic</em>, or <u>underline</u> formatting to your text.</p>
+                        
+                        <h3>Creating Lists</h3>
+                        <p>Create ordered (numbered) and unordered (bulleted) lists using the list buttons on the toolbar:</p>
+                        <ul>
+                            <li>This is an unordered list item.</li>
+                            <li>This is another unordered list item.</li>
+                        </ul>
+                        <ol>
+                            <li>This is an ordered list item.</li>
+                            <li>This is another ordered list item.</li>
+                        </ol>
+                        
+                        <h3>Inserting Links</h3>
+                        <p>Insert links using the link button on the toolbar. Select the text you want to turn into a link, click the link button, and enter the URL.</p>
+                        
+                        <h3>Inserting Images</h3>
+                        <p>Insert images using the image button on the toolbar. Click the image button, upload your image or provide a URL, and insert it into your content.</p>
+                        
+                        <h2>Advanced Features</h2>
+                        <p>Explore more advanced features like tables, code blocks, and media embeds using the toolbar options.</p>
+                        
+                        <h3>Inserting Tables</h3>
+                        <p>To insert a table, click the table button on the toolbar, select the number of rows and columns you want, and click to insert. You can then populate the table cells with content.</p>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Header 1</th>
+                                    <th>Header 2</th>
+                                    <th>Header 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Row 1, Cell 1</td>
+                                    <td>Row 1, Cell 2</td>
+                                    <td>Row 1, Cell 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Row 2, Cell 1</td>
+                                    <td>Row 2, Cell 2</td>
+                                    <td>Row 2, Cell 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Inserting Code Samples</h3>
+                        <p>To insert a code sample, click the code button on the toolbar, then enter or paste your code. Here's an example:</p>
+                        <pre><code class="language-html">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Example Code&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                        
+                        <h2>Saving and Exporting</h2>
+                        <p>Once you're done editing, you can save or export your content as needed. Use the save button or export options available in your application.</p>
+                        
+                        <h2>Tips and Tricks</h2>
+                        <p>Here are some additional tips for using TinyMCE effectively:</p>
+                        <ul>
+                            <li>Use keyboard shortcuts for common actions (e.g., Ctrl+B for bold, Ctrl+I for italic).</li>
+                            <li>Customize the toolbar to include the buttons you use most often.</li>
+                            <li>Explore the plugins available for TinyMCE to extend its functionality.</li>
+                        </ul>
+                        
+                        <p>Enjoy using TinyMCE for all your content creation needs!</p>`
 
-    editorConfig = {
-        base_url: '/tinymce',
-        suffix: '.min',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        skin: 'oxide-dark',
-        content_css: 'dark',
-        height: 720,
+  editorConfig = {
+    base_url: '/tinymce',
+    suffix: '.min',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    skin: 'oxide-dark',
+    content_css: 'dark',
+    height: 720,
 
-    }
+  }
 
-    getEditorContent = () => {
-        return tinymce.activeEditor?.getContent()
-    }
+  getEditorContent = () => {
+    return tinymce.activeEditor?.getContent()
+  }
 
 }

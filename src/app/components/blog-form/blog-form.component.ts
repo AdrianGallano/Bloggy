@@ -74,10 +74,10 @@ export class BlogFormComponent implements OnInit {
       }
     }
   }
+
+  goToBlogs(){
+    window.location.href = "/blogs"
+  }
 }
 
-/* 
-how to save this?
 
-
-*/

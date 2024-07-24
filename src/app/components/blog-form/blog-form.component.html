@@ -13,8 +13,8 @@
                 </div>
                 <div class="sm:col-span-2">
                     <label for="summary"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Summary</label>
-                    <textarea id="summary" rows="8" required [(ngModel)]="blogData.summary"
+                        class="sr-only block mb-2 text-sm font-medium text-gray-900 dark:text-white">Summary</label>
+                    <textarea id="summary" rows="3" required [(ngModel)]="blogData.summary"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50  border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Your summary here"></textarea>
                 </div>
@@ -22,10 +22,17 @@
                     <app-blog-editor></app-blog-editor>
                 </div>
             </div>
-            <button type="button" (click)="saveBlog()"
-                class="fixed right-10 bottom-10 inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                Add blog
-            </button>
+            <div class="fixed flex gap-3 right-10 bottom-10 ">
+                <button type="button" (click)="goToBlogs()"
+                    class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-gray-700 rounded-lg focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-900 hover:bg-gray-800">
+                    Cancel
+                </button>
+                <button type="button" (click)="saveBlog()"
+                    class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                    Save
+                </button>
+
+            </div>
         </div>
     </div>
 </section>

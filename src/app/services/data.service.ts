@@ -57,7 +57,7 @@ export class DataService {
     return data
   }
 
-  async update(route: string, id: number | string | null, payload: {}) {
+  async update(route: string, id: number | string | null | undefined, payload: {}) {
     this.addAuthorizationToHeader()
     const response = await fetch(`http://localhost/bloggy-api/public/api/${route}/${id}`,
       {
